@@ -1,0 +1,92 @@
+body{
+	text-align: center;
+
+	background-color: #001E6C;
+}
+
+/* Header CSS */
+.header {
+	font-size: 5rem;
+}
+
+.header-drum {
+	display: inline-block;
+}
+
+.header-drum>img {
+	width: 5rem;
+	position: relative;
+	top: 0.3rem;
+
+	transform: rotateZ(-30deg);
+}
+
+/* Body CSS */
+
+.drum-container {
+	width: 99%;
+
+	position: absolute;
+	top: 40%;
+}
+
+.drum {
+	display: inline-block;
+
+	width: 	150px;
+	height:	150px;
+
+	margin: 0 1.5%;
+
+	border: solid;
+	border-width: 10px;
+	border-color: #035397;
+	border-radius: 10%;
+
+	/* Position to adjust the positioning of it's child elements and config animation  */
+	position: relative;
+
+	background-color: #ffffff;
+}
+
+.drum>img {
+	width: 100%;
+	height: 100%;
+}
+
+.drum-keylable {
+	font-size: 4rem;
+
+	margin: 0;
+
+	width: 100%;
+
+	position:absolute;
+	bottom: 5%;
+}
+
+/* Footer CSS */
+
+:root {
+	--bitter-font: 'Bitter', 'serif';
+}
+
+.footer {
+	font-family: var(--bitter-font);
+
+	color: #FFFFFF;
+
+	width: 99%;
+
+	position: absolute;
+	bottom: 5%;
+}
+
+/* General CSS */
+
+.header, .drum-keylable{
+	font-family: var(--bitter-font);
+
+	color: #5089C6;
+	text-shadow: 5px 0px 2px #FFAA4C;
+}

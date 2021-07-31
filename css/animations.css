@@ -1,0 +1,16 @@
+@keyframes squeeze {
+	from {
+		width: 150px;
+		height: 150px;
+	}
+
+	to {
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.squeeze {
+	animation-name: squeeze;
+	animation-duration: 1s;
+}
