@@ -17,6 +17,24 @@ var loadsounds = function() {
 		sound.play();
 	};
 
+	var lastID = 0;
+	function animation(element){
+		// Cancel previous animation
+		if(lastID)
+		{
+			clearTimeout(lastID);
+			element.classList.add('notransition');
+			element.classList.remove('squeeze');
+			element.offsetHeight;
+			element.classList.remove('notransition');
+		}
+
+		element.classList.add('squeeze');
+		lastID = setTimeout(function(){
+			element.classList.remove('squeeze');
+		}, 300);
+	};
+
 	for(const drum in drums)
 	{
 		// Add sound event for mouse click
@@ -24,7 +42,7 @@ var loadsounds = function() {
 			const sound = drums[drum].sound;
 			playsound(sound);
 
-			drums[drum].element.classList.add('squeeze');
+			animation(drums[drum].element);
 		};
 		drums[drum].element.addEventListener('click', clicksound);
 
@@ -33,7 +51,10 @@ var loadsounds = function() {
 			const sound = drums[drum].sound;
 
 			if(event.code === ('Key' + drums[drum].key))
+			{
 				playsound(sound);
+				animation(drums[drum].element);
+			}
 		};
 		document.addEventListener('keydown', keysound);
 	}
